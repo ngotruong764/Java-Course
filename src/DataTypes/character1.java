@@ -1,3 +1,5 @@
+package DataTypes;
+
 public class character1 {
     public static void main(String[] args) {
         char firstChar = 'A';

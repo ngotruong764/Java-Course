@@ -1,3 +1,5 @@
+package DataTypes;
+
 /**
  * Create 3 char variables to store the character
  *      mySimpleChar should be assigned the literal question-mark character
