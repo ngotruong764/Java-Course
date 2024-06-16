@@ -7,6 +7,18 @@ public class Main {
 //        Movie movie = Movie.getMovie("Adventure", "Star Wars");
 //        movie.watchMovie();
 
+        // Casting
+        Object comedy = Movie.getMovie("C", "Airplane");
+        Movie comedyMovie = (Movie) comedy;
+        comedyMovie.watchMovie();
+
+        var ariplane = Movie.getMovie("C", "Airplane");
+        ariplane.watchMovie();
+
+        var plane=  new Comedy("Airplane");
+        plane.watchMovie();
+
+
         Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("Enter Type( A for Adventure, C for Comedy, "+
