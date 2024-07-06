@@ -1,12 +1,14 @@
-package generic_extra.model;
+package generic_extra.challenge;
 
 import generic_extra.util.QueryItem;
 
 import java.util.Random;
 
-public class Student implements QueryItem {
+public class Student implements QueryItem, Comparable<Student> {
     private String name;
     private String course;
+    private static int LAST_ID = 10_000;
+    private int studentId;
     private  int yearStarted;
 
     protected static Random random  = new Random();
@@ -14,6 +16,7 @@ public class Student implements QueryItem {
     private static String[] courses = {"C++", "Java", "Python"};
 
     public Student(){
+        studentId = LAST_ID++;
         int lastNameIndex = random.nextInt(65, 91);
         name  =firstNames[random.nextInt(5)] + " " + (char)lastNameIndex;
         course = courses[random.nextInt(3)];
@@ -22,7 +25,7 @@ public class Student implements QueryItem {
 
     @Override
     public String toString() {
-        return "%-15s %-15s %d".formatted(name, course, yearStarted);
+        return "%d %-15s %-15s %d".formatted(studentId,name, course, yearStarted);
     }
 
     public int getYearStarted() {
@@ -41,5 +44,10 @@ public class Student implements QueryItem {
 
             default -> false;
         };
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(studentId, o.studentId);
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import generic_extra.model.LPAStudent;
 import generic_extra.model.Student;
+import generic_extra.util.QueryList;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +22,14 @@ public class Main {
         }
 //        printList(lpaStudents);
         printMoreList(lpaStudents);
+
+        var queryList = new QueryList<>(lpaStudents);
+//        var matches = queryList.getMatches("Course", "Python");
+//        printMoreList(matches);
+        var students2021 = QueryList.getMatches(students, "YearStarted", "2021");
+        printMoreList(students2021);
+
+//        QueryList<Employee> employeeQueryList = new QueryList<Employee>();
     }
 
 //    public static <T extends Student> void printList(List<T> students){
