@@ -13,7 +13,7 @@ public class Main {
         currentThread.setPriority(Thread.MAX_PRIORITY);
         printThreadState(currentThread);
 
-        //This CustomThread class is our class that extends
+        // This CustomThread class is our class that extends
         // Thread class
         CustomThread customThread = new CustomThread();
         customThread.start();
@@ -30,6 +30,7 @@ public class Main {
                 }
             }
         };
+        // put in Thread constructor
         Thread myThread = new Thread(myRunnable);
         myThread.start();
 
